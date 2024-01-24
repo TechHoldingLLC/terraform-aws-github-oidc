@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "github_oidc_trust_policy" {
         variable = "token.actions.githubusercontent.com:sub"
 
         values = flatten([
-          for env, repos in var.github_oidc_env_repo_config : [for repo in toset(repos) : [
+          for env, repos in var.env_repo_config : [for repo in toset(repos) : [
             "repo:${repo}:environment:${env}"
             ]
           ]
