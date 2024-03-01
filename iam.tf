@@ -58,6 +58,5 @@ data "aws_iam_policy_document" "github_oidc_trust_policy" {
 resource "aws_iam_role" "github_oidc" {
   name               = var.role_name
   assume_role_policy = data.aws_iam_policy_document.github_oidc_trust_policy.json
-
 }
 

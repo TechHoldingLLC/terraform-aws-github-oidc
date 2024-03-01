@@ -31,6 +31,12 @@ locals {
     }
   }
 }
+
+resource "aws_iam_role_policy_attachment" "github_aws_oidc" {
+  role       = module.github_aws_open_id.iam_role_name
+  policy_arn = "policy_arn"
+}
+
 ```
 # Environment Base Configuration
 ```
@@ -53,6 +59,11 @@ locals {
     "org_name/repo_name_3",
     "org_name/repo_name_4"
   ]
+}
+
+resource "aws_iam_role_policy_attachment" "github_aws_oidc" {
+  role       = module.github_aws_open_id.iam_role_name
+  policy_arn = "policy_arn"
 }
 
 ```
@@ -87,6 +98,11 @@ locals {
       prod_branch_name = local.github_repos
     }
   }
+}
+
+resource "aws_iam_role_policy_attachment" "github_aws_oidc" {
+  role       = module.github_aws_open_id.iam_role_name
+  policy_arn = "policy_arn"
 }
 ```
 
