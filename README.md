@@ -29,9 +29,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_branch_repo_config"></a> [branch\_repo\_config](#input\_branch\_repo\_config) | list of repo with specific branch | `any` | `null` | no |
-| <a name="input_github_oidc_branch_repo_config"></a> [github\_oidc\_branch\_repo\_config](#input\_github\_oidc\_branch\_repo\_config) | list of repo with branch map | `any` | `null` | no |
-| <a name="input_github_oidc_env_repo_config"></a> [github\_oidc\_env\_repo\_config](#input\_github\_oidc\_env\_repo\_config) | list of repo with env | `any` | `null` | no |
+| <a name="input_branch_repo_config"></a> [branch\_repo\_config](#input\_branch\_repo\_config) | list of repo with specific branch | `any` | `{}` | no |
+| <a name="input_env_repo_config"></a> [env\_repo\_config](#input\_env\_repo\_config) | list of repo with env | `any` | `{}` | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | AWS IAM Role Name to setup OpenID Identity Provider | `string` | n/a | yes |
 
 ## Outputs
@@ -39,6 +38,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_iam_role_arn"></a> [iam\_role\_arn](#output\_iam\_role\_arn) | n/a |
+| <a name="output_iam_role_name"></a> [iam\_role\_name](#output\_iam\_role\_name) | n/a |
 
 ## License
 

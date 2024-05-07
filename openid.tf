@@ -1,6 +1,6 @@
-#########################
+##################################
 #  github_aws_open_id/OpenId.tf  #
-#########################
+##################################
 
 data "tls_certificate" "github" {
   url = "https://token.actions.githubusercontent.com/.well-known/openid-configuration"

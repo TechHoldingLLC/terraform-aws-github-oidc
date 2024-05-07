@@ -1,6 +1,6 @@
-#########################
+###############################
 #  github_aws_open_id/iam.tf  #
-#########################
+###############################
 
 data "aws_iam_policy_document" "github_oidc_trust_policy" {
   statement {
@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "github_oidc_trust_policy" {
     }
 
     dynamic "condition" {
-      for_each = try(var.env_repo_config, {})
+      for_each = var.env_repo_config
 
       content {
         test     = "StringEquals"
@@ -38,7 +38,7 @@ data "aws_iam_policy_document" "github_oidc_trust_policy" {
     }
 
     dynamic "condition" {
-      for_each = try(var.branch_repo_config, {})
+      for_each = var.branch_repo_config
       content {
         test     = "StringEquals"
         variable = "token.actions.githubusercontent.com:sub"
