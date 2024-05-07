@@ -1,6 +1,6 @@
-#########################
+####################################
 #  github_aws_open_id/variable.tf  #
-#########################
+####################################
 
 variable "role_name" {
   type        = string
@@ -10,11 +10,11 @@ variable "role_name" {
 variable "branch_repo_config" {
   description = "list of repo with specific branch"
   type        = any
-  default     = null
+  default     = {}
 }
 
 variable "env_repo_config" {
   description = "list of repo with env"
   type        = any
-  default     = null
+  default     = {}
 }
